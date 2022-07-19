@@ -22,7 +22,7 @@
 /** The name of the database for WordPress */
 if(isset($_ENV['CLEARDB_DATABASE_URL'])) {
     $db = parse_url($_ENV['CLEARDB_DATABASE_URL']);
-	printf($db);
+	print_r($db);
     define('DB_NAME', trim($db['path'],`/`));
     define('DB_USER', $_ENV['CLEARDB_DB_USER']);
     define('DB_PASSWORD', $_ENV['CLEARDB_DB_PASS']);
