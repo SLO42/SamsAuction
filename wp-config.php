@@ -20,8 +20,10 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
+mysql://bc4f5f7fe3de0b:edd4d0e7@us-cdbr-east-06.cleardb.net/heroku_a72b3570f99791d?reconnect=true
 if(isset($_ENV['CLEARDB_DATABASE_URL'])) {
     $db = parse_url($_ENV['CLEARDB_DATABASE_URL']);
+	printf($db);
     define('DB_NAME', trim($db['path'],`/`));
     define('DB_USER', $_ENV['CLEARDB_DB_USER']);
     define('DB_PASSWORD', $_ENV['CLEARDB_DB_PASS']);
@@ -29,7 +31,7 @@ if(isset($_ENV['CLEARDB_DATABASE_URL'])) {
     define('DB_CHARSET', 'utf8');
     define('DB_COLLATE', '');
 } else {
-    die($_ENV);
+    die("no valid database url");
 }
 
 /**#@+
