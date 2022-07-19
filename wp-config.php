@@ -20,7 +20,6 @@
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-mysql://bc4f5f7fe3de0b:edd4d0e7@us-cdbr-east-06.cleardb.net/heroku_a72b3570f99791d?reconnect=true
 if(isset($_ENV['CLEARDB_DATABASE_URL'])) {
     $db = parse_url($_ENV['CLEARDB_DATABASE_URL']);
 	printf($db);
